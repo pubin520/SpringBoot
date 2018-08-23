@@ -1,0 +1,19 @@
+package com.ddtech.amqp.config;
+
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MyMessageCovert {
+
+    /**
+     * 消息序列化格式为json
+     * @return
+     */
+    @Bean
+    public MessageConverter  messageConverter(){
+            return new Jackson2JsonMessageConverter();
+    }
+}
